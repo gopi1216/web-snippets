@@ -1,0 +1,86 @@
+{
+  "Remove Border": {
+    "prefix": ":bn",
+    "body": "border: none;"
+  },
+  "Center the element": {
+    "prefix": ":ma",
+    "body": "margin: 0 auto;"
+  },
+  "Left-Right border": {
+    "prefix": ":bx",
+    "body": "border-left: ${1:1px} solid ${2:#000};\nborder-right: ${3:1px} solid ${4:#000};"
+  },
+  "Top-Bottom border": {
+    "prefix": ":by",
+    "body": "border-top: ${1:1px} solid ${2:inherit};\nborder-bottom: ${3:1px} solid ${4:inherit};"
+  },
+  "Left-Right padding": {
+    "prefix": ":px",
+    "body": "padding: 0 ${1:1rem};"
+  },
+  "Top-Bottom padding": {
+    "prefix": ":py",
+    "body": "padding: ${1:1rem} 0;"
+  },
+  "Left-Right margin": {
+    "prefix": ":mx",
+    "body": "margin: 0 ${1:1rem};"
+  },
+  "Top-Bottom margin": {
+    "prefix": ":my",
+    "body": "margin: ${1:1rem} 0;"
+  },
+  "Remove outline": {
+    "prefix": ":on",
+    "body": "outline: none;"
+  },
+  "Remove float": {
+    "prefix": ":fn",
+    "body": "float: none;"
+  },
+  "Box shadow": {
+    "prefix": ":bs",
+    "body": "box-shadow: ${1:0} ${2:0} ${3:0} rgba(0, 0, 0, ${4:0.1});"
+  },
+  "Remove Box shadow": {
+    "prefix": ":bsn",
+    "body": "box-shadow: none;"
+  },
+  "Mask Image": {
+    "prefix": ":mi",
+    "body": "mask-image: url(${1});\n-webkit-mask-image: url(${2});"
+  },
+  "Mask size": {
+    "prefix": ":ms",
+    "body": "mask-size: ${1:contain};\n-webkit-mask-size: ${2:contain};"
+  },
+  "Mask position": {
+    "prefix": ":mp",
+    "body": "mask-position: ${1:center};\n-webkit-mask-position: ${2:center};"
+  },
+  "Mask repeat": {
+    "prefix": ":mr",
+    "body": "mask-repeat: ${1:no-repeat};\n-webkit-mask-repeat: ${2:no-repeat};"
+  },
+  "Mask Shorthand property": {
+    "prefix": ":m",
+    "body": "mask: url(${1}) no-repeat center;\n-webkit-mask: url(${2}) no-repeat center/contain;"
+  },
+  "Background Shorthand property": {
+    "prefix": ":bg",
+    "body": "background: url(${1}) no-repeat center/contain;"
+  },
+  "Font": {
+    "prefix": ":f",
+    "body": "font: ${1:1rem}/1.5 \"${2:OS}\";"
+  },
+  "Flex element": {
+    "prefix": ":df",
+    "body": "display: flex;\njustify-content: center;\nalign-items: center;"
+  },
+  "Custom Scroll Bar": {
+    "prefix": ":sb",
+    "body": "::-webkit-scrollbar{width: .25rem}\n::-webkit-scrollbar-track{background: #0000}\n::-webkit-scrollbar-thumb{background: #666}"
+  }
+}
