@@ -182,19 +182,91 @@ document.querySelector();
 ```js
 console.log();
 ```
-:ac - Create Add class expresion in JQuery
+:ce - Create an Element.
 ```js
-$('selector').addClass('classname');
+document.createElement('element');
 ```
-:rc - Create Remove class expresion in JQuery
+:de - Debugger;
 ```js
-$('selector').addClass('classname');
+debugger;
 ```
-:tc - Create Toggle class expresion in JQuery
+:ae - Add Event Listener
 ```js
-$('selector').addClass('classname');
+document.addEventListener('click', () => {});
 ```
-:ce
+:ca - Add Class
 ```js
-${1:document}.createElement('${2:element}');
+document.classList.add('class');
+```
+:cr - Remove Class
+```js
+document.classList.remove('class');
+```
+:ga - Get Attribute
+```js
+document.getAttribute('attr');
+```
+:sa - Set Attribute
+```js
+document.setAttribute('attr', value);
+```
+:ra - Remove Attribute
+```js
+document.removeAttribute('attr');
+```
+:ih - Inner HTML Element
+```js
+document.innerHTML = 'elem';
+```
+:tc - Text Content
+```js
+document.textContent = 'content';
+```
+:qsa - Query Selector All
+```js
+document.querySelectorAll('selector');
+```
+:fe - For Each
+```js
+array.forEach((item) => { body });
+```
+:fo - For of Loop
+```js
+for (let i of array) { body };
+```
+:m - Map method
+```js
+array.map((i) => { body });
+```
+:fl - Filter method
+```js
+array.filter((i) => { body });
+```
+:fc - Call method
+```js
+method.call(context, arguments);
+```
+:fa - Apply method
+```js
+method.apply(context, arguments);
+```
+:jp - JSON parse
+```js
+JSON.parse(obj);
+```
+:js - JSON Stringify
+```js
+JSON.stringify(obj)
+```
+:si - Set Interval
+```js
+setInterval(() =>{ body }, 1000);
+```
+:st - Set Timeout
+```js
+setTimeout(() =>{ body }, 1000);
+```
+:us - Use Strict
+```js
+'use strict';
 ```

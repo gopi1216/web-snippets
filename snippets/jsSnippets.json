@@ -15,18 +15,6 @@
     "prefix": ":cl",
     "body": "console.log($1);"
   },
-  "Add Class": {
-    "prefix": ":ac",
-    "body": "$('${1:selector}').addClass('${2:classname}');"
-  },
-  "Remove Class": {
-    "prefix": ":rc",
-    "body": "$('${1:selector}').addClass('${2:classname}');"
-  },
-  "Toggle Class": {
-    "prefix": ":tc",
-    "body": "$('${0:selector}').addClass('${1:classname}');"
-  },
   "Create Element": {
     "prefix": ":ce",
     "body": "${1:document}.createElement('${2:element}');"
@@ -81,19 +69,19 @@
   },
   "forEach": {
     "prefix": ":fe",
-    "body": "${1:array}.forEach((item) => { ${2:// body} });"
+    "body": "${1:array}.forEach((item) => { ${2:body} });"
   },
   "forOf": {
     "prefix": ":fo",
-    "body": "for (let i of ${1:array}) { ${2:// body};"
+    "body": "for (let i of ${1:array}) { ${2:body} };"
   },
   "map": {
     "prefix": ":m",
-    "body": "${1:array}.map((i) => { ${2 //body}})"
+    "body": "${1:array}.map((i) => { ${2:body}});"
   },
   "filter": {
     "prefix": ":fl",
-    "body": "${1:array}.filter((i) => { ${2 //body}})"
+    "body": "${1:array}.filter((i) => { ${2:body}})"
   },
   "function call": {
     "prefix": ":fc",
@@ -113,15 +101,15 @@
   },
   "setInterval": {
     "prefix": ":si",
-    "body": "setInterval(() =>{ ${0:// body} }, ${1:1000})"
+    "body": "setInterval(() =>{ ${0:body} }, ${1:1000})"
   },
   "setTimeout": {
     "prefix": ":st",
-    "body": "setTimeout(() =>{ ${0:// body} }, ${1:1000})"
+    "body": "setTimeout(() =>{ ${0:body} }, ${1:1000})"
   },
   "use strict": {
     "prefix": ":us",
-    "body": "use strict;"
+    "body": "'use strict';"
   }
 
 }
