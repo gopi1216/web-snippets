@@ -19,7 +19,7 @@
   },
   "Empty Anchor tag": {
     "prefix": ":a",
-    "body": "<a href=\"javascript:;\" role=\"button\"></a>"
+    "body": "<a href=\"javascript:;\">${0:link}</a>"
   },
   "Text field": {
     "prefix": ":it",
@@ -33,13 +33,9 @@
     "prefix": ":ip",
     "body": "<label for=\"${1:password}\">${2:Password}</label>\n<input type=\"password\" id=\"password\" placeholder=\"${1:Enter your Password}\">"
   },
-  "Modal Content": {
-    "prefix": ":modal",
-    "body": "<div class=\"${1:container-component} modal-dialog\" role=\"document\" id=\"c_${2:id}\">\n\t<div class=\"modal-content\">\n\t\t<div class=\"modal-header\">\n\t\t\t<h5 class=\"modal-title\">Modal title</h5>\n\t\t</div>\n\t\t<div class=\"modal-body\">Modal body</div>\n\t\t<div class=\"modal-footer\">\n\t\t\t<button type=\"button\" data-dismiss=\"modal\">Close</button>\n\t\t</div>\n\t</div>\n</div>"
-  },
   "Base layout": {
     "prefix": ":l",
-    "body": "<main>\n\t<header></header>\n\t<article></article>\n\t<footer></footer>\n</main>"
+    "body": "<main>\n\t<header></header>\n\t<aside></aside>\n\t<article></article>\n\t<footer></footer>\n</main>"
   },
   "Page layout": {
     "prefix": ":pl",

@@ -20,3 +20,5 @@ All notable changes to the "web-snippets" extension will be documented in this f
 
 ## [1.0.6]
 - New CSS snippets re added.
+## [1.0.7]
+- Lot of JS snippets being added to make your life easier.
