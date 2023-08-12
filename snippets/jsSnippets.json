@@ -9,7 +9,7 @@
   },
   "Query selector": {
     "prefix": ":qs",
-    "body": "document.querySelector($1);"
+    "body": "document.querySelector($1)"
   },
   "Console log": {
     "prefix": ":cl",
@@ -110,6 +110,14 @@
   "use strict": {
     "prefix": ":us",
     "body": "'use strict';"
+  },
+  "Import React & React-Dom": {
+    "prefix": ":imr",
+    "body": "import React from 'react';\nimport ReactDom from 'react-dom';"
+  },
+  "React Function Component": {
+    "prefix": ":rfc",
+    "body": "function ${0}() {\n\treturn (\n\t\t${1}\n\t)\n}"
   }
 
 }

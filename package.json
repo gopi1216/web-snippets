@@ -2,7 +2,7 @@
   "name": "web-snippets",
   "displayName": "web-snippets",
   "description": "This extension contains snippets for HTML, CSS and Javascript.",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "publisher": "UI",
   "icon": "images/web-snippetsIcon.png",
   "engines": {
