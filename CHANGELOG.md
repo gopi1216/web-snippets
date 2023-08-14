@@ -32,3 +32,7 @@ All notable changes to the "web-snippets" extension will be documented in this f
 
 ## [2.0.1]
 - This is minor update, which addressed few known issues.
+## [2.0.2]
+CSS file formatter has another feature to remove duplicates Rule,
+- if both rules have same properties and values, then one among will be removed.
+- if both rules have same properties and different values, then it will merge them with last updated value.

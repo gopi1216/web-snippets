@@ -11,6 +11,11 @@ This extension is combination of [clean-css](https://github.com/clean-css/clean-
 - This extension will work for either `selected content` or `an entire page`.
 - Do press `shift+alt+f` shortcut and make sure the current file type is either `CSS` or `HTML`.
 
+Here i'm attaching couple of screenshots, which helps you understand how the format will work.
+
+![Before CSS File format](./images/before-format.png 'Before CSS file format')
+
+![After CSS file format](/images/after-css_file-format.png 'After CSS file format')
 # Web Snippets Usage
 ## Shortcuts in **`[.html]`** file:
 

@@ -2,7 +2,7 @@
   "name": "web-snippets",
   "displayName": "Web Formatters & Web Snippets",
   "description": "This extension contains snippets & formatters for HTML, CSS and Javascript(only snippets) Files",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "publisher": "UI",
   "icon": "./icon.png",
   "engines": {
@@ -42,7 +42,8 @@
                 "beforeValue"           : true
               },
               "semicolonAfterLastProperty": true
-            }
+            },
+            "level": "2"
           },
           "description": "clean options"
         }
