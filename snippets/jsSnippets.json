@@ -1,0 +1,123 @@
+{
+  "function": {
+    "prefix": ":f",
+    "body": "function ${1:name}(${2:params}) {$3}"
+  },
+  "Anonymous function": {
+    "prefix": ":af",
+    "body": "function(${1:params}){$2}"
+  },
+  "Query selector": {
+    "prefix": ":qs",
+    "body": "document.querySelector($1)"
+  },
+  "Console log": {
+    "prefix": ":cl",
+    "body": "console.log($1);"
+  },
+  "Create Element": {
+    "prefix": ":ce",
+    "body": "${1:document}.createElement('${2:element}');"
+  },
+  "Debugger": {
+    "prefix": ":de",
+    "body": "debugger;"
+  },
+  "addEventListener": {
+    "prefix": ":ae",
+    "body": "${1:document}.addEventListener('${2:click}', () => {});"
+  },
+  "append Child": {
+    "prefix": ":ac",
+    "body": "${1:document}.appendChild(${2:childElement});"
+  },
+  "remove Child": {
+    "prefix": ":rc",
+    "body": "${1:document}.removeChild(${2:childElement});"
+  },
+  "classList.add": {
+    "prefix": ":ca",
+    "body": "${1:document}.classList.add('${2:class}');"
+  },
+  "classList.remove": {
+    "prefix": ":cr",
+    "body": "${1:document}.classList.remove('${2:class}');"
+  },
+  "getAttribute": {
+    "prefix": ":ga",
+    "body": "${1:document}.getAttribute('${2:attr}');"
+  },
+  "setAttribute": {
+    "prefix": ":sa",
+    "body": "${1:document}.setAttribute('${2:attr}', ${3:value});"
+  },
+  "removeAttribute": {
+    "prefix": ":ra",
+    "body": "${1:document}.removeAttribute('${2:attr}');"
+  },
+  "innerHTML": {
+    "prefix": ":ih",
+    "body": "${1:document}.innerHTML = '${2:elem}';"
+  },
+  "textContent": {
+    "prefix": ":tc",
+    "body": "${1:document}.textContent = '${2:content}';"
+  },
+  "querySelectorAll": {
+    "prefix": ":qsa",
+    "body": "${1:document}.querySelectorAll('${2:selector}');"
+  },
+  "forEach": {
+    "prefix": ":fe",
+    "body": "${1:array}.forEach((item) => { ${2:body} });"
+  },
+  "forOf": {
+    "prefix": ":fo",
+    "body": "for (let i of ${1:array}) { ${2:body} };"
+  },
+  "map": {
+    "prefix": ":m",
+    "body": "${1:array}.map((i) => { ${2:body}});"
+  },
+  "filter": {
+    "prefix": ":fl",
+    "body": "${1:array}.filter((i) => { ${2:body}})"
+  },
+  "function call": {
+    "prefix": ":fc",
+    "body": "${1:method}.call(${2:context}, ${3:arguments});"
+  },
+  "function apply": {
+    "prefix": ":fa",
+    "body": "${1:method}.apply(${2:context}, ${3:arguments});"
+  },
+  "JSON.parse": {
+    "prefix": ":jp",
+    "body": "JSON.parse(${1:obj});"
+  },
+  "JSON.stringify": {
+    "prefix": ":js",
+    "body": "JSON.stringify(${1:obj})"
+  },
+  "setInterval": {
+    "prefix": ":si",
+    "body": "setInterval(() =>{ ${0:body} }, ${1:1000})"
+  },
+  "setTimeout": {
+    "prefix": ":st",
+    "body": "setTimeout(() =>{ ${0:body} }, ${1:1000})"
+  },
+  "use strict": {
+    "prefix": ":us",
+    "body": "'use strict';"
+  },
+  "Import React & React-Dom": {
+    "prefix": ":imr",
+    "body": "import React from 'react';\nimport ReactDom from 'react-dom';"
+  },
+  "React Function Component": {
+    "prefix": ":rfc",
+    "body": "function ${0}() {\n\treturn (\n\t\t${1}\n\t)\n}"
+  }
+
+}
