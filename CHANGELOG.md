@@ -36,3 +36,8 @@ All notable changes to the "web-snippets" extension will be documented in this f
 CSS file formatter has another feature to remove duplicates Rule,
 - if both rules have same properties and values, then one among will be removed.
 - if both rules have same properties and different values, then it will merge them with last updated value.
+## [3.0.0]
+- This is major release, finally included most popular JS formatter(prettier).
+- In this release we can format any javascript/typescript file with 2 different options
+    - Select blocks of Code and format.
+    - Format entire file.
