@@ -1,12 +1,12 @@
 {
   "name": "web-snippets",
   "displayName": "Web Formatters & Web Snippets",
-  "description": "This extension contains snippets & formatters for HTML, CSS and Javascript(only snippets) Files",
-  "version": "2.0.2",
+  "description": "This extension contains snippets & formatters for HTML, CSS and Javascript Files",
+  "version": "3.0.8",
   "publisher": "UI",
-  "icon": "./icon.png",
+  "icon": "icon.png",
   "engines": {
-    "vscode": "^1.76.0"
+    "vscode": "^1.90.0"
   },
   "categories": [
     "Formatters",
@@ -23,58 +23,77 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "Compact CSS",
+      "title": "Formatter Settings",
       "properties": {
         "compactCSS.options": {
           "type": "object",
           "default": {
             "format": {
               "breaks": {
-                "afterAtRule"     : true,
+                "afterAtRule": true,
                 "afterBlockBegins": 1,
-                "afterBlockEnds"  : 2,
-                "afterComment"    : 1,
-                "afterRuleEnds"   : true,
-                "beforeBlockEnds" : 1
+                "afterBlockEnds": 2,
+                "afterComment": 1,
+                "afterRuleEnds": true,
+                "beforeBlockEnds": 1
               },
               "spaces": {
                 "aroundSelectorRelation": true,
-                "beforeValue"           : true
+                "beforeValue": true
               },
               "semicolonAfterLastProperty": true
             },
             "level": "2"
           },
           "description": "clean options"
+        },
+        "prettyJS.options": {
+          "type": "object",
+          "default": {
+            "jsxSingleQuote": true,
+            "singleQuote": true,
+            "printWidth": 96
+          },
+          "description": "Pretty JS default options"
         }
       }
     },
-    "keybindings":[
+    "keybindings": [
       {
         "command": "web-formatter.CompactCSS",
         "key": "shift+alt+f",
-        "when": "editorTextFocus && editorLangId == css"
+        "when": "editorTextFocus && editorLangId == 'css'"
+      },
+      {
+        "command": "web-formatter.PrettierJS",
+        "key": "shift+alt+f",
+        "when": "editorTextFocus && (editorLangId == 'javascript' || editorLangId == 'typescript')"
       }
     ],
     "commands": [
       {
         "command": "web-formatter.CompactCSS",
         "title": "Compact CSS"
+      },
+      {
+        "command": "web-formatter.PrettierJS",
+        "title": "Pretty JS"
       }
     ],
-    "snippets": [ {
-      "language": "html",
-      "path": "./snippets/htmlSnippets.json"
-    },
-    {
-      "language": "css",
-      "path": "./snippets/cssSnippets.json"
-    },
-    {
-      "language": "javascript",
-      "path": "./snippets/jsSnippets.json"
-    }
-  ]
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/htmlSnippets.json"
+      },
+      {
+        "language": "css",
+        "path": "./snippets/cssSnippets.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/jsSnippets.json"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -93,6 +112,7 @@
     "typescript": "^5.1.3"
   },
   "dependencies": {
-    "clean-css": "^5.3.2"
+    "clean-css": "^5.3.2",
+    "prettier": "^3.5.3"
   }
 }
