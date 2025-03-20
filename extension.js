@@ -1,24 +1,31 @@
-const vscode = require('vscode');
-const formatCSS = require('clean-css');
-let options = vscode.workspace.getConfiguration('compactCSS').get('options');
+const vscode = require('vscode'),
+  formatCSS = require('clean-css'),
+  prettier = require('prettier'),
+  options = vscode.workspace.getConfiguration('compactCSS').get('options') || {},
+  prettyOptions = vscode.workspace.getConfiguration('prettyJS').get('options') || {};
 
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-  let disposable = vscode.commands.registerCommand('web-formatter.CompactCSS', () => formateCSS());
+  const disposable = vscode.commands.registerCommand(
+      'web-formatter.CompactCSS',
+      () => minifyCSS(),
+    ),
+    _prettier = vscode.commands.registerCommand(
+      'web-formatter.PrettierJS',
+      () => beautifyJS(),
+    );
 
-  context.subscriptions.push(disposable);
+  context.subscriptions.push(disposable, _prettier);
 }
 
-const formateCSS = () => {
+const minifyCSS = () => {
   const editor = vscode.window.activeTextEditor;
 
-  if (!editor) {
-    return;
-  }
+  if (!editor) return;
 
-  let doc = editor.document,
+  const doc = editor.document,
     selection = editor.selection;
 
   if (doc.languageId === 'css') {
@@ -26,7 +33,10 @@ const formateCSS = () => {
     const editRange = selection.isEmpty
       ? new vscode.Range(
           new vscode.Position(0, 0),
-          new vscode.Position(doc.lineCount - 1, doc.lineAt(doc.lineCount - 1).text.length)
+          new vscode.Position(
+            doc.lineCount - 1,
+            doc.lineAt(doc.lineCount - 1).text.length,
+          ),
         )
       : new vscode.Range(selection.start, selection.end);
 
@@ -34,12 +44,56 @@ const formateCSS = () => {
       ? cleanCss.minify(doc.getText()).styles
       : cleanCss.minify(doc.getText(selection)).styles;
 
-    editor.edit((edit) => {
-      edit.replace(editRange, newText);
-    });
-  } else {
-    return;
+    editor
+      .edit((edit) => {
+        edit.replace(editRange, newText);
+      })
+      .then((success) => {
+        if (!success) vscode.window.showErrorMessage('Failed to minify CSS.');
+      });
   }
 };
+
+function beautifyJS() {
+  const editor = vscode.window.activeTextEditor;
+
+  if (!editor) return;
+
+  const doc = editor.document,
+    selection = editor.selection;
+
+  if (doc.languageId === 'javascript' || doc.languageId === 'typescript') {
+    try {
+      const editRange = selection.isEmpty
+        ? new vscode.Range(
+            new vscode.Position(0, 0),
+            new vscode.Position(
+              doc.lineCount - 1,
+              doc.lineAt(doc.lineCount - 1).text.length,
+            ),
+          )
+        : new vscode.Range(selection.start, selection.end);
+
+      const textToFormat = selection.isEmpty
+        ? doc.getText()
+        : doc.getText(selection);
+
+      const formattedText = prettier.format(textToFormat, {
+        ...prettyOptions,
+        parser: doc.languageId === 'typescript' ? 'typescript' : 'babel',
+      });
+
+      formattedText.then((newText) => {
+        editor.edit((edit) => {
+          edit.replace(editRange, newText);
+        });
+      });
+    } catch (error) {
+      vscode.window.showErrorMessage(
+        `Prettier formatting error: ${error.message}`,
+      );
+    }
+  }
+}
 
 module.exports = { activate };
